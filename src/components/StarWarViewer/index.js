@@ -30,7 +30,7 @@ function StarwarViewer() {
         setSearch(input)
     }
 
-    const pokemonElements = starWar.map(item => {
+    const starWarElements = starWar.map(item => {
         const {name, height, mass, hair_color, skin_color} = item
         return (
             <div key={nanoid()} className="starWar_list">
@@ -59,7 +59,10 @@ function StarwarViewer() {
                 <button className="search-button">Search</button>
             </form>
             
-            <div>{pokemonElements}</div>
+            {starWar.length 
+            ? <div>{starWarElements}</div> 
+            : <div className="no-results">No results</div>
+            }
 
         </div>
         
