@@ -9,7 +9,7 @@ function PokemonViewer({ id }) {
 //Task 2:
 //In PokemonViewer, create a piece of state that will store a Pokemon.
 
-//Within a useEffect, fetch a Pokemon from https://pokeapi.co/api/v2/pokemon/${id} and store the data in your piece of state. The useEffect should only re-run when the id changes.
+// Within a useEffect, fetch a Pokemon from https://pokeapi.co/api/v2/pokemon/${id} and store the data in your piece of state. The useEffect should only re-run when the id changes.
 
   useEffect(() => {
     async function getpokemon() {
@@ -23,7 +23,8 @@ function PokemonViewer({ id }) {
 
   return (
     <div className="pokemon-viewer">
-      <p>display pokemon with id {id} here!</p>
+      <p>Name: {pokemon.name}, ID: {pokemon.id}</p>
+      <img src={pokemon.sprites.front_default} alt={`${pokemon.name}`}/>
     </div>
   );
 }
