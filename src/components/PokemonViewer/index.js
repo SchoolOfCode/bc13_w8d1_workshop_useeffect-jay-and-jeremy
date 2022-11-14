@@ -3,13 +3,6 @@ import {useEffect, useState, React} from "react";
 
 function PokemonViewer({ id }) {
   const [pokemon, setPokemon] = useState({});
-  // TODO: send http request to `https://pokeapi.co/api/v2/pokemon/${id}` and display the data!
-  // HINT: you will need useState and useEffect!
-
-//Task 2:
-//In PokemonViewer, create a piece of state that will store a Pokemon.
-
-// Within a useEffect, fetch a Pokemon from https://pokeapi.co/api/v2/pokemon/${id} and store the data in your piece of state. The useEffect should only re-run when the id changes.
 
   useEffect(() => {
     async function getpokemon() {
@@ -23,8 +16,9 @@ function PokemonViewer({ id }) {
 
   return (
     <div className="pokemon-viewer">
+     <h2> From Pokemon API</h2>
       <p>Name: {pokemon.name}, ID: {pokemon.id}</p>
-      <img src={pokemon.sprites.front_default} alt={`${pokemon.name}`}/>
+      <img src={`${pokemon.sprites ? pokemon.sprites.front_default : 'No image'}`} alt={`${pokemon.name}`}/>
     </div>
   );
 }

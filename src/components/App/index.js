@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 
 import PokemonViewer from "../PokemonViewer";
+import StarWarViewer from "../StarWarViewer";
 
 // ## Task 1:
 
@@ -9,6 +10,7 @@ import PokemonViewer from "../PokemonViewer";
 
 function App() {
   const [id, setId] = useState();
+  
 
   function randNum() {
     return Math.floor(Math.random() * 151) + 1
@@ -17,15 +19,17 @@ function App() {
   function handleClick() {
     // TODO: Set id to be random number between 1 and 151
     setId(randNum());
-    console.log(randNum())
+    
   }
 
   return (
     <div className="App">
-      {/* TODO: call handleClick when button clicked */}
-      <button onClick={handleClick}>Get Random Pokemon</button>
-      {/* TODO: hand down id as a prop */}
+      <h2> From Pokemon API</h2>
+      <button onClick={handleClick}>Get Random Pokemon</button> 
       <PokemonViewer id={id}/>
+      <br/>
+           
+      <StarWarViewer/>
     </div>
   );
 }
