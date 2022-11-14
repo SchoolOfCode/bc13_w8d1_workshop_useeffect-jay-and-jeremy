@@ -9,7 +9,7 @@ import StarWarViewer from "../StarWarViewer";
 // In `App/index.js`, complete the TODOS so that when the button is clicked, the id changes to a random number between 1 and 151, and that id is handed down as a prop to `PokemonViewer`.
 
 function App() {
-  const [id, setId] = useState();
+  const [id, setId] = useState(1);
   
 
   function randNum() {

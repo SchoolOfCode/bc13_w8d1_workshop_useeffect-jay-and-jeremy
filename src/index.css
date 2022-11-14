@@ -18,4 +18,8 @@ code {
   justify-content: center;
 }
 
+.search-button {
+  display: inline-block;
+  margin-left: 10px;
+}
 
